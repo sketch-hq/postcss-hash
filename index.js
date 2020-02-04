@@ -58,7 +58,7 @@ module.exports = postcss.plugin("postcss-hash", opts => {
         }
 
         // create/update manifest.json
-        const newData = utils.data(originalName, result.opts.to);
+        const newData = utils.data(result.opts.from, result.opts.to);
 
         // You're probably thinking "Why not make all of the following async?!"
         // Well, using the async versions causes race conditions when this plugin
