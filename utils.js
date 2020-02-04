@@ -34,11 +34,11 @@ function rename(file, css, opts) {
 will return an object of {oldname: newname} to append/update into manifest file.
 input: ('./css/file.css', './file.a1b2c3d4e5.css')   output: {"file.css": "file.a1b2c3d4e5.css"}
 */
-function data(originalName, hashedName) {
+function data(originalName, hashedName, relative) {
     var newData = {};
     var runPath = path.join(process.cwd(),"/");
     var key = originalName.replace(runPath, '');
-    var value = path.parse(hashedName).base;
+    var value = hashedName.replace(path.join(runPath, relative), '');
 
     newData[key] = value;
     return newData;
