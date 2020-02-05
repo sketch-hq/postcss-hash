@@ -37,7 +37,7 @@ input: ('./css/file.css', './file.a1b2c3d4e5.css')   output: {"file.css": "file.
 function data(originalName, hashedName, relative) {
     var newData = {};
     var runPath = path.join(process.cwd(),"/");
-    var key = path.basenme(originalName);
+    var key = path.basename(originalName);
     var value = hashedName.replace(path.join(runPath, relative), '');
 
     newData[key] = value;
